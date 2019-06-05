@@ -57,3 +57,94 @@ html, body {
     height: 100%;
 }
 
+/* variables */
+
+@redtext: darkred;
+@bluetext: blue;
+@marginpercent: 2%;
+@defaultfontsize: 1rem;
+
+
+/* nesting */
+
+.header{
+	nav { .navflexbox ();
+
+		a {
+		color: @redtext;
+		text-decoration: none;
+
+		@media (max-width: 500px) {
+			color: @bluetext; }
+		}
+		
+
+}
+}
+
+	
+.all {
+	margin: @marginpercent;
+	.topsection {
+		.topsectionflexbox();
+
+				.mainpic
+		{
+				width: 50%;
+				margin: auto;
+				padding: 15px;
+
+		}
+				h1 {
+				font-size: 2.6rem;
+		}
+	}
+	.bottomsection {
+		.bottomsectionflexbox();
+	
+	h2 {
+		font-size: 1.4rem;
+		color: @redtext;
+		margin: @marginpercent;
+
+		@media (max-width: 500px) {
+			color: @bluetext; }
+		
+		
+		}
+		p {
+			font-size: @defaultfontsize;
+				@media (max-width: 500px) {
+				.borderbottom ();
+				}
+
+		}
+	a {
+		color: black;
+		text-decoration: none;
+		}
+}
+
+.navflexbox {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.topsectionflexbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.bottomsectionflexbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.borderbottom {
+	border-bottom: 3px solid black
+}
